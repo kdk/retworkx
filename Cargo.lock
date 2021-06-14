@@ -297,16 +297,16 @@ dependencies = [
 
 [[package]]
 name = "numpy"
-version = "0.12.2"
+version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9fd9e8e652becf4ba6c11803945f8bf463c23f482f704bb33f70ae9d22482d10"
+checksum = "a996bcd58fb29bef9debf717330cd8876c3b4adbeea4939020a5326a3afad4d9"
 dependencies = [
  "cfg-if 0.1.10",
  "libc",
  "ndarray",
  "num-complex",
  "num-traits",
- "pyo3",
+ "pyo3 0.13.2",
 ]
 
 [[package]]
@@ -399,6 +399,17 @@ dependencies = [
  "paste",
  "pyo3cls",
  "unindent",
+]
+
+[[package]]
+name = "pyo3"
+version = "0.13.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4837b8e8e18a102c23f79d1e9a110b597ea3b684c95e874eb1ad88f8683109c3"
+dependencies = [
+ "cfg-if 1.0.0",
+ "libc",
+ "parking_lot",
 ]
 
 [[package]]
@@ -527,7 +538,7 @@ dependencies = [
  "ndarray",
  "numpy",
  "petgraph",
- "pyo3",
+ "pyo3 0.12.4",
  "rand",
  "rand_pcg",
  "rayon",
