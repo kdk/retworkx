@@ -306,8 +306,14 @@ dependencies = [
  "ndarray",
  "num-complex",
  "num-traits",
- "pyo3",
+ "pyo3 0.12.4",
 ]
+
+[[package]]
+name = "once_cell"
+version = "1.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "692fcb63b64b1758029e0a96ee63e049ce8c5948587f2f7208df04625e5f6b56"
 
 [[package]]
 name = "parking_lot"
@@ -391,7 +397,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bf6bbbe8f70d179260b3728e5d04eb012f4f0c7988e58c11433dd689cecaa72e"
 dependencies = [
  "ctor",
- "hashbrown",
  "indoc",
  "inventory",
  "libc",
@@ -402,12 +407,61 @@ dependencies = [
 ]
 
 [[package]]
+name = "pyo3"
+version = "0.14.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "338f7f3701e11fd7f76508c91fbcaabc982564bcaf4d1ca7e1574ff2b4778aec"
+dependencies = [
+ "cfg-if 1.0.0",
+ "hashbrown",
+ "indoc",
+ "libc",
+ "parking_lot",
+ "paste",
+ "pyo3-build-config",
+ "pyo3-macros",
+ "unindent",
+]
+
+[[package]]
+name = "pyo3-build-config"
+version = "0.14.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dcb2e98cc9ccc83d4f7115c8f925e0057e88c8d324b1bc4c2db4a7270c06ac9d"
+dependencies = [
+ "once_cell",
+]
+
+[[package]]
 name = "pyo3-derive-backend"
 version = "0.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "10ecd0eb6ed7b3d9965b4f4370b5b9e99e3e5e8742000e1c452c018f8c2a322f"
 dependencies = [
  "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "pyo3-macros"
+version = "0.14.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cfb8671a42d0ecc4bec8cc107ae96d49292ca20cd1968e09b98af4aafd516adf"
+dependencies = [
+ "pyo3-macros-backend",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "pyo3-macros-backend"
+version = "0.14.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9addf6dc422f05d4949cc0990195ee74fa43e3c3780cc9a1972fe9e7b68a9f48"
+dependencies = [
+ "proc-macro2",
+ "pyo3-build-config",
  "quote",
  "syn",
 ]
@@ -527,7 +581,7 @@ dependencies = [
  "ndarray",
  "numpy",
  "petgraph",
- "pyo3",
+ "pyo3 0.14.1",
  "rand",
  "rand_pcg",
  "rayon",
